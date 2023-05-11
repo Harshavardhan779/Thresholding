@@ -30,7 +30,8 @@ Display the results.
 
 ## Program
 
-
+### Developed by: Harsha vardhan
+### Register no: 212222240114
 # Load the necessary packages
 ```python
 import numpy as np
