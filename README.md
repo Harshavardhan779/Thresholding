@@ -32,7 +32,8 @@ Display the results.
 
 ### Developed by: Harsha vardhan
 ### Register no: 212222240114
-# Load the necessary packages
+
+### Load the necessary packages
 ```python
 import numpy as np
 import matplotlib.pyplot as plt
@@ -40,14 +41,14 @@ import cv2
 
 
 ```
-# Read the Image and convert to grayscale
+### Read the Image and convert to grayscale
 
 ```python
 image = cv2.imread("ntr.jpeg",1)
 image = cv2.cvtColor(image,cv2.COLOR_BGR2RGB)
 image_gray = cv2.imread("ntr.jpeg",0)
 ```
-# Use Global thresholding to segment the image
+### Use Global thresholding to segment the image
 ```python
 ret,thresh_img1=cv2.threshold(image_gray,86,255,cv2.THRESH_BINARY)
 ret,thresh_img2=cv2.threshold(image_gray,86,255,cv2.THRESH_BINARY_INV)
@@ -56,18 +57,18 @@ ret,thresh_img4=cv2.threshold(image_gray,86,255,cv2.THRESH_TOZERO_INV)
 ret,thresh_img5=cv2.threshold(image_gray,100,255,cv2.THRESH_TRUNC)
 
 ```
-# Use Adaptive thresholding to segment the image
+### Use Adaptive thresholding to segment the image
 
 ```python
 thresh_img7=cv2.adaptiveThreshold(image_gray,255,cv2.ADAPTIVE_THRESH_MEAN_C,cv2.THRESH_BINARY,11,2)
 thresh_img8=cv2.adaptiveThreshold(image_gray,255,cv2.ADAPTIVE_THRESH_GAUSSIAN_C,cv2.THRESH_BINARY,11,2)
 ```
-# Use Otsu's method to segment the image 
+### Use Otsu's method to segment the image 
 
 ```python
 ret,thresh_img6=cv2.threshold(image_gray,0,255,cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 ```
-# Display the results
+### Display the results
 
 ```python
 titles=["Gray Image","Threshold Image (Binary)","Threshold Image (Binary Inverse)","Threshold Image (To Zero)"
@@ -84,13 +85,13 @@ for i in range(0,9):
     plt.imshow(cv2.cvtColor(images[i],cv2.COLOR_BGR2RGB))
     plt.axis("off")
     plt.show()
-
-
-
-
-
-
 ```
+
+
+
+
+
+
 ## Output
 
 ### Original Image
